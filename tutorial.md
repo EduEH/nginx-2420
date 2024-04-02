@@ -19,13 +19,44 @@
 	- **-p:** With mkdir, makes all the dependend directories. In this case, it creates "nginx-2420" and all the directories above it(web and html).
 	- **. :** The period makes sure the path starts at the current directory. DON'T FORGET THE PERIOD.
 7) `cd ./web/html/nginx-2420` to go to the nginx24-20 directory.
-8) `vim index.html` to create the html file and open it in vim.
+8) `sudo vim index.html` to create the html file and open it in vim.
 	- **vim:** Opens the designed file in vim.
-9) Copy the following code into it
+9) Copy the following code into it:
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2420</title>
+    <style>
+        * {
+            color: #db4b4b;
+            background: #16161e;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>All your base are belong to us</h1>
+</body>
+</html>
+```
+10) Press excape and type :wq, then press enter to quit vim and save the file. 
 
-99) Use `cd /etc/nginx` to access the directory with nginx's configuration file.
-) Use `sudo vim nginx.conf` to open the configuration file.
-) Inside the http{} block you should see a server{} block. Add the following code inside the http block, after the server block:
+11) Use `cd /etc/nginx` to access the directory with nginx's configuration file.
+12) Use `sudo vim nginx.conf` to open the configuration file.
+13) Inside the http{} block you should see a server{} block. Add the following code inside the http block, after the server block:
 ```
 server {
     listen 80;
