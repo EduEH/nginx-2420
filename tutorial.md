@@ -3,9 +3,9 @@
 # Creating a demo page with nginx with simple steps
 
 1) Start by making sure your system is updated by using the command `sudo pacman -Syu`.
-		**sudo**: Runs the command with increased permissions.
-		**pacman**: This is Arch's package manager, used to install the packages.
-		**-Syu**: System update.  
+	- **sudo**: Runs the command with increased permissions.
+	- **pacman**: This is Arch's package manager, used to install the packages.
+	- **-Syu**: System update.  
 2) Install vim with the command `sudo pacman -S vim`.
 		**-S**: Used with pacman to install a package.
 3) Install nginx with `sudo pacman -S nginx`.
