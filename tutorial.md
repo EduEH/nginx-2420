@@ -19,6 +19,9 @@
 	- **-p:** With mkdir, makes all the dependend directories. In this case, it creates "nginx-2420" and all the directories above it(web and html).
 	- **. :** The period makes sure the path starts at the current directory. DON'T FORGET THE PERIOD.
 7) `cd ./web/html/nginx-2420` to go to the nginx24-20 directory.
+8) `vim index.html` to create the html file and open it in vim.
+	- **vim:** Opens the designed file in vim.
+9) Copy the following code into it
 
 99) Use `cd /etc/nginx` to access the directory with nginx's configuration file.
 ) Use `sudo vim nginx.conf` to open the configuration file.
@@ -26,11 +29,10 @@
 ```
 server {
     listen 80;
-    listen [::]:80;
-    server_name domainname1.tld;
-    root /usr/share/nginx/domainname1.tld/html;
+    server_name YOUR DROPLET IP;
+    root /web/html/nginx-2420;
     location / {
-        index index.php index.html index.htm;
+        index.html;
     }
 }
 ``` 
