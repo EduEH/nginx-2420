@@ -67,3 +67,5 @@ server {
     }
 }
 ``` 
+
+14) `sudo systemctl start nginx.service`
