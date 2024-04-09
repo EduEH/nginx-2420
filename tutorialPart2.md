@@ -24,22 +24,31 @@ ExecStart=/home/YOUR_USERNAME/bin/hello-server
 WantedBy=multi-user.target
 
 ```
-8) Install UFW with `sudo pacman -S ufw`
-) `sudo vim nginx-2420` to open the file used in part 1.
 
-) Add the following to it, after the "location /" block:
+8) `cd /etc/nginx/sites-available`
+
+9) `sudo vim nginx-2420` to open the file used in part 1.
+
+10) Add the following to it, after the "location /" block, and save:
 ```
 location /hey {
-
     proxy_pass http://127.0.0.1:8080;
-
+    proxy_http_version 1.1;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
 }
+
 location /echo {
-
     proxy_pass http://127.0.0.1:8080;
-
+    proxy_http_version 1.1;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
 }
-
 ```
+11) Install UFW with `sudo pacman -S ufw`
 
-) `sudo pacman -S ufw`
+12) Enable http connections with `sudo ufw allow http`
