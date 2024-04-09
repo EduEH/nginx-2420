@@ -57,4 +57,6 @@ location /echo {
 
 14) Enable the firewall with `sudo ufw enable`
 
-15) Start the server service with `sudo systemctl start hello-server.service`
+15) Restart nginx with `sudo systemctl resload nginx.service`
+
+16) Start the server service with `sudo systemctl start hello-server.service`
