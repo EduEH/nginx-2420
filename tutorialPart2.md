@@ -52,3 +52,9 @@ location /echo {
 11) Install UFW with `sudo pacman -S ufw`
 
 12) Enable http connections with `sudo ufw allow http`
+
+13) Enable ssh connections with `sudo ufw allow SSH`
+
+14) Enable the firewall with `sudo ufw enable`
+
+15) Start the server service with `sudo systemctl start hello-server.service`
